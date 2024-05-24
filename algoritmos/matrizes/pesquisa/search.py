@@ -4,17 +4,19 @@ nome = []
 for x in range(10):
     nome.append(input("digite o nome: "))
     nome[x].lower()
-key = 'S'
+key = input("S - pesquisar item\nN - sair\nDigite: ")
+while key != "S" and key != "N":
+    key = input("S - pesquisar item\nN - sair\nDigite: ")
 while key == 'S':
-    pes = input("digite o nome que está procurando: ")
+    pes = input("\ndigite o nome que está procurando: ")
     if pes in nome:
         indice = nome.index(pes)
-        print(f'{pes}, esta na lista no indice: {indice}')
+        print(f'\n===\n{pes}, esta na lista no indice: {indice}\n===\n')
     else:
-        print(f'{pes} não esta na lista')
-    key = input("S - para continuar procurando\nN - para parar\ndigite: ")
+        print(f'\n===\n{pes} não esta na lista\n===\n')
+    key = input("\nS - para continuar procurando\nN - finalizar\ndigite: ")
     while key != 'S' and key != 'N':
-        key = input("S - para continuar procurando\nN - para parar\ndigite: ")
+        key = input("\nS - para continuar procurando\nN - finalizar\ndigite: ")
 # acha = 0
 # for x in range(10):
 #     if pes == nome[x]:
