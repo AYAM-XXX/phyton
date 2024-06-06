@@ -10,25 +10,25 @@ for x in range(8):
             dados.append(input("digite o nome:"))
         elif y == 1:
             nota = float(input(f"digite nota do {y}° bim: "))
-            while nota < 0:
+            while nota < 0 or nota > 10:
                 nota = float(input(f"digite nota do {y}° bim: "))
             dados.append(nota)
             soma += dados[y]
         elif y == 2:
             nota = float(input(f"digite nota do {y}° bim: "))
-            while nota < 0:
+            while nota < 0 or nota > 10:
                 nota = float(input(f"digite nota do {y}° bim: "))
             dados.append(nota)
             soma += dados[y]
         elif y == 3:
             dnota = float(input(f"digite nota do {y}° bim: "))
-            while nota < 0:
+            while nota < 0 or nota > 10:
                 nota = float(input(f"digite nota do {y}° bim: "))
             dados.append(nota)
             soma += dados[y]
         elif y == 4:
             nota = float(input(f"digite nota do {y}° bim: "))
-            while nota < 0:
+            while nota < 0 or nota > 10:
                 nota = float(input(f"digite nota do {y}° bim: "))
             dados.append(nota)
             soma += dados[y]
