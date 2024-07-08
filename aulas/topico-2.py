@@ -29,3 +29,6 @@ print(" sua idade é:", idade)'''
 #     print("\nelse if não existe em C")
 # else:
 #     print("\nsifuder")
+
+# print("a" in "ayam") <-- verifica se tem "a" na palavra "ayam"
+# print("a" + "y") <-- junta as duas palavras
