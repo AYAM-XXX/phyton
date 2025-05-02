@@ -1,11 +1,20 @@
-sandwich_orders = ['veggie', 'grilled cheese', 'turkey', 'roast beef']
-finished_sandwiches = []
+designs = ['deafpool', 'M4 competition', 'livro de capas']
+final_designs = []
 
-while sandwich_orders:
-    current_sandwich = sandwich_orders.pop()
-    print(f"I'm working on your {current_sandwich} sandwich.")
-    finished_sandwiches.append(current_sandwich)
 
-print("\n")
-for sandwich in finished_sandwiches:
-    print(f"I made a {sandwich} sandwich.")
+def complete_design(unfinished_designs, finished_designs):
+    while unfinished_designs:
+        unfinished_design = unfinished_designs.pop()
+        print(f"trabalhando com {unfinished_design}")
+        finished_designs.append(unfinished_design)
+
+
+def finished_list(listas):
+    print("\n\ndesign prontos: ")
+    for item in listas:
+        print(f"- {item} está pronto")
+
+
+complete_design(designs[:], final_designs)
+finished_list(final_designs)
+print(designs)
