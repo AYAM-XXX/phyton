@@ -9,10 +9,9 @@ def describe_city(cidade, pais=''):
     print(f"\nnome de cidade: {cidade}")
     if pais:
         print(f"país: {pais}\n")
+        return
 
 
 describe_city('tokyo', 'japão')
 describe_city('brasilia', 'brasil')
 describe_city('silver spring')
-
-

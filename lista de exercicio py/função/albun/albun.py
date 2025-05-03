@@ -14,7 +14,13 @@
 #
 # Crie pelo menos uma chamada da função que inclua o número de músicas em um
 # álbum.
-listas_artistas = []
+#
+# Álbuns de usuários:
+# Comece com seu programa do Exercício 8.7. Escreva um loop while que
+# possibilite aos usuários inserir o artista e o título de um álbum.
+# Após receber essas informações, chame make_album() com a entrada do
+# usuário e exiba o dicionário criado.
+# Não se esqueça de incluir um valor de saída no loop while.
 
 
 def make_album(artista, album, num_musicas=None):
@@ -22,7 +28,6 @@ def make_album(artista, album, num_musicas=None):
                 'álbum': album}
     if num_musicas:
         artistas['numero de musicas'] = num_musicas
-    listas_artistas.append(artistas)
     return artistas
 
 
