@@ -37,9 +37,8 @@ while True:
 
     elif escolha == 2:  # inserir nota
         lista_de_notas = []
-        nome_aluno = input("digite o nome do ALUNO: ")
-        vf_aluno = vf.verifica(nome_aluno, alunos_notas)
-        if vf_aluno:
+        nome_aluno = input("digite o nome do ALUNO: ").strip.lower()
+        if vf.verifica(nome_aluno, alunos_notas):
             while True:  # recolhe as nota dos aluno é coloca na lista
                 nota_aluno = input("digite a nota do aluno: ")
                 if nota_aluno == 'sair':  # para de recolher as notas

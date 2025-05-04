@@ -8,5 +8,5 @@ def calcular_media(nome, lista):
             print("sem nota cadastrada")
             return None
     else:
-        media = print("aluno não encontrado")
+        print("aluno não encontrado")
         return None
