@@ -65,3 +65,30 @@ pizza.set_number_served(100)
 print(f"numero de pessoas atendidas: {pizza.number_served}")
 pizza.increment_number_served(100)
 print(f"numero de pessoas atendidas: {pizza.number_served}")
+
+# Sorveteria: Uma sorveteria é um tipo específico de restaurante.
+# Escreva uma classe chamada IceCreamStand que herde da classe
+# Restaurant do Exercício 9.1 (página 208) ou Exercício 9.4 (página
+# 214). Qualquer uma das versões da classe funcionará; basta escolher
+# a que você mais gosta. Adicione um atributo chamado flavors que
+# armazene uma lista de sabores de sorvete. Escreva um método que
+# exiba esses sabores. Crie uma instância a partir de IceCreamStand
+# e chame esse método.
+flavors_type = ['baunilha', 'chocolate', 'morango', 'menta com chocolate',
+                'doce de leite', 'pistache', 'coco', 'napolitano']
+
+
+class IceCreamStand(restaurante):
+    def __init__(self, restaurant_name, cuisine_type, flavors: list[str]):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = flavors
+
+    def show_flavors(self):
+        print("\ntodos sabores disponiveis: ")
+        for flavor in self.flavors:
+            print(f"- {flavor}")
+
+
+minha_sorveteria = IceCreamStand('sorvetão', 'sorveteria', flavors_type)
+minha_sorveteria.describe_restaurant()
+minha_sorveteria.show_flavors()
