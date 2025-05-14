@@ -54,3 +54,42 @@ isadora.increment_login_attempts()
 print(f"numero de logins: {isadora.login_attempts}")
 isadora.reset_login_attempts()
 print(f"numero de logins: {isadora.login_attempts}")
+
+# Admin: Um administrador é um tipo especial de usuário. Crie uma classechamada
+# Admin que herde da classe User escrita no Exercício 9.3 (página 209) ou
+# Exercício 9.5 (página 214). Adicione um atributo, privileges, que armazeneuma
+# lista de strings como "can add post", "can delete post", "can ban user",assim
+# por diante. Escreva um método chamado show_privileges() que enumere oconjunto
+# de privilégios do administrador. Crie uma instância Admin e chame seu método.
+privilegios = [
+    "pode adicionar postagem",
+    "pode deletar postagem",
+    "pode banir usuário",
+    "pode editar perfis de usuários",
+    "pode ver análises",
+    "pode gerenciar configurações",
+    "pode redefinir senhas",
+    "pode atribuir funções",
+    "pode moderar comentários",
+    "pode acessar o painel de administração"
+]
+
+
+class privileges():
+    def __init__(self, privileges_adm):
+        self.privileges_adm = privileges_adm
+
+    def show_privileges(self):
+        print("\nprivilegios de adm: ")
+        for privilege in self.privileges_adm:
+            print(f"- {privilege}")
+
+
+class admin(user):
+    def __init__(self, first_name, last_name, age, color_hair):
+        super().__init__(first_name, last_name, age, color_hair)
+        self.priv = privileges(privilegios)
+
+
+adm = admin('ayam', 'marto', 20, 'brown')
+adm.priv.show_privileges()
