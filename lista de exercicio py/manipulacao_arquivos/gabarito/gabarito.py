@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 nome_arquivo = input("digite o nome da prova: ") + '.txt'
-pasta = Path('manipulação de arquivo/preencher gabarito/provas')
+pasta = Path('manipulacao_arquivos/gabarito/provas')
 arquivo = pasta / nome_arquivo
 arquivo.touch()
 
