@@ -17,4 +17,4 @@ while True:
     else:
         convidados += nome_convidado + '\n'
 
-print(path.read_text())
+print(path.read_text(encoding='utf-8'))
