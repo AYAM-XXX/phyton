@@ -21,7 +21,7 @@ class car:
             print("isso n faz sentido")
 
     def fill_gas_tank(self):
-        print("- 60l max")
+        print(" 60l max")
 
 
 class bateria():
