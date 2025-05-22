@@ -1,16 +1,21 @@
-def get_formatted_name(first, middle, last):
-    full_name = f"{first} {middle} {last}"
-    return full_name.title()
+class AnonymousSurvey:
+    """Collect anonymous answers to a survey question."""
 
+    def __init__(self, question):
+        """Store a question, and prepare to store responses."""
+        self.question = question
+        self.responses = []
 
-if __name__ == "__main__":
-    print("Enter 'q' at any time to quit.")
-    while True:
-        first = input("\nPlease give me a first name: ")
-        if first == 'q':
-            break
-        last = input("Please give me a last name: ")
-        if last == 'q':
-            break
-        formatted_name = get_formatted_name(first, last)
-        print(f"\tNeatly formatted name: {formatted_name}.")
+    def show_question(self):
+        """Show the survey question."""
+        print(self.question)
+
+    def store_response(self, new_response):
+        """Store a single response to the survey."""
+        self.responses.append(new_response)
+
+    def show_results(self):
+        """Show all the responses that have been given."""
+        print("Survey results:")
+        for response in self.responses:
+            print(f"- {response}")
