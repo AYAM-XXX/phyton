@@ -45,8 +45,7 @@ def cliente_tipo():
         print("qual o tipo do cliente:\n1- vip\n2- comum")
         cliente = input("digite: ")
         validador = validador_de_cliente(cliente)
-        if validador == True:
-            
+        if validador:
             break
         else:
             print("valor inserido errado")
