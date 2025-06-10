@@ -39,6 +39,6 @@ while True:
         if validador(valor):
             saque(valor)
         else:
-            print("não aceitamos essa quantidade")
+            print("não aceitamos essa quantidade: ")
     else:
         break
