@@ -1,21 +1,22 @@
-class AnonymousSurvey:
-    """Collect anonymous answers to a survey question."""
+import random
+import string
 
-    def __init__(self, question):
-        """Store a question, and prepare to store responses."""
-        self.question = question
-        self.responses = []
 
-    def show_question(self):
-        """Show the survey question."""
-        print(self.question)
 
-    def store_response(self, new_response):
-        """Store a single response to the survey."""
-        self.responses.append(new_response)
+def monkey_text_infinite():
+    target = "methinks it is like a weasel"  # 28 caracteres
+    characters = string.ascii_letters + string.digits + " "  # Inclui espaço
+    iterations = 0
 
-    def show_results(self):
-        """Show all the responses that have been given."""
-        print("Survey results:")
-        for response in self.responses:
-            print(f"- {response}")
+    while True:
+        string_aleatoria = ''.join(random.choices(characters, k=28))
+        iterations += 1
+        if string_aleatoria == target:
+            print(f"Encontrado: {string_aleatoria}")
+            print(f"Iterações necessárias: {iterations}")
+            break
+        if iterations % 100000000000 == 0:  # Feedback para evitar travamento
+            print(f"Iteração {iterations}: {string_aleatoria}")
+
+
+monkey_text_infinite()
