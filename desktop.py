@@ -1,22 +1,8 @@
-import random
-import string
-
-
-
-def monkey_text_infinite():
-    target = "methinks it is like a weasel"  # 28 caracteres
-    characters = string.ascii_letters + string.digits + " "  # Inclui espaço
-    iterations = 0
-
-    while True:
-        string_aleatoria = ''.join(random.choices(characters, k=28))
-        iterations += 1
-        if string_aleatoria == target:
-            print(f"Encontrado: {string_aleatoria}")
-            print(f"Iterações necessárias: {iterations}")
-            break
-        if iterations % 100000000000 == 0:  # Feedback para evitar travamento
-            print(f"Iteração {iterations}: {string_aleatoria}")
-
-
-monkey_text_infinite()
+L1 = [1, 2, 3]
+L2 = [3, 4, 5]
+L1.append(3)
+L3 = L1
+L3.append(7)
+L1.append(8)
+L4 = L1 + L2
+print(L1)
