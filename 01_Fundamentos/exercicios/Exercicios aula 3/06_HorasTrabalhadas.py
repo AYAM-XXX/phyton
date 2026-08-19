@@ -1,0 +1,5 @@
+nome = input("Digite o seu nome: ")
+horas = int(input("Digite a quantidade de horas trabalhadas: "))
+horasExtra = input("Digite a quantidade de horas extra trabalhadas: ")
+salarioLiquido = (12 * float(horas)) + (40 * float(horasExtra))
+print(f"nome: {nome}\nsalario liquido: {salarioLiquido * 0.865}")
