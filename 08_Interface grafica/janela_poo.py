@@ -93,7 +93,13 @@ class Aplication():
         self.lista_frame2.heading("#2", text="Nome")
         self.lista_frame2.heading("#3", text="Telefone")
         self.lista_frame2.heading("#4", text="Cidade")
+        self.lista_frame2.column("#0", width=1)
+        self.lista_frame2.column("#1", width=50)
+        self.lista_frame2.column("#2", width=200)
+        self.lista_frame2.column("#3", width=125)
+        self.lista_frame2.column("#4", width=125)
 
+        self.lista_frame2.place(relwidth=0.93, relheight=0.93, relx=0.02, rely=0.05)
     def imagem(self):
         self.img = tk.PhotoImage(file="D:\\Users\\1103572\\Downloads\\imgtkinter.png")
         self.janela.iconphoto(True, self.img)
