@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter.ttk import Treeview
-from xml.etree.ElementTree import TreeBuilder
+from tkinter.ttk import Treeview, Scrollbar, Style
+
 
 COR_FUNDO = "#FFC8C2"
 COR_FRAME = "#FFE8E5"
@@ -86,8 +86,17 @@ class Aplication():
 
 
     def lista_saida(self):
-        self.lista_frame2=Treeview(self.frames2, height=3, columns=("Col1", "Col2", "Col3", "Col4"))
+        style =Style()
+        style.theme_use("clam")
+        style.configure("Custom.Treeview", background=COR_FRAME, foreground=COR_TEXTO, rowheight=28, fieldbackground=COR_FRAME,font=("Comic Sans", 10), borderwith=0)
+        style.configure("Custom.Treeview.Heading", background=COR_FRAME, foreground=COR_TEXTO, font=("Comic Sans", 10, "bold"), relief="flat")
+        style.map(
+            "Custom.Treeview",
+            background=[("selected", COR_BOTAO)],
+            foreground=[("selected", COR_CAMPO)]
+        )
 
+        self.lista_frame2=Treeview(self.frames2, height=3, columns=("Col1", "Col2", "Col3", "Col4"), style="Custom.Treeview")
         self.lista_frame2.heading("#0", text="")
         self.lista_frame2.heading("#1", text="Codigo")
         self.lista_frame2.heading("#2", text="Nome")
@@ -98,8 +107,13 @@ class Aplication():
         self.lista_frame2.column("#2", width=200)
         self.lista_frame2.column("#3", width=125)
         self.lista_frame2.column("#4", width=125)
-
         self.lista_frame2.place(relwidth=0.93, relheight=0.93, relx=0.02, rely=0.05)
+        self.scroll_lista_frame2 =Scrollbar(self.frames2, orient="vertical")
+        self.scroll_lista_frame2.configure(command=self.lista_frame2.yview)
+        self.lista_frame2.configure(yscrollcommand=self.scroll_lista_frame2.set)
+        self.scroll_lista_frame2.place(relwidth=0.05, relheight=0.95, rely=0.05, relx=0.95)
+
+
     def imagem(self):
         self.img = tk.PhotoImage(file="D:\\Users\\1103572\\Downloads\\imgtkinter.png")
         self.janela.iconphoto(True, self.img)
