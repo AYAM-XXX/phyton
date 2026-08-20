@@ -12,7 +12,15 @@ TREE_FUNDO  = "#FFF5F3"
 TREE_TEXTO  = "#3D2927"
 TREE_HEADER = "#C98F89"
 TREE_SELECT = "#D98F89"
-class Aplication():
+
+class Function():
+    def limpa_tela(self):
+        self.entrar_tel.delete(0, tk.END)
+        self.entrar_nome.delete(0, tk.END)
+        self.entrar_codigo.delete(0, tk.END)
+        self.entrar_cid.delete(0, tk.END)
+
+class Aplication(Function):
 
     def __init__(self, janela):
         self.janela=janela
@@ -39,7 +47,7 @@ class Aplication():
         self.frames2.place(relwidth=0.95, relheight=0.45, rely=0.52, relx=0.025)
 
     def botoes(self):
-        self.limpar=tk.Button(self.frames1, text="Limpar")
+        self.limpar=tk.Button(self.frames1, text="Limpar", command=self.limpa_tela)
         self.limpar.configure(background=COR_BOTAO, bd=0.5, highlightbackground=COR_BORDA,highlightthickness=4,font=("Comic Sans", 10, "bold"), foreground=COR_TEXTO)
         self.limpar.place(relwidth=0.10, relheight=0.15, rely=0.1, relx=0.15)
         self.buscar=tk.Button(self.frames1, text="Buscar")
