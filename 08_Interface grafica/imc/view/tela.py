@@ -14,9 +14,6 @@ COR_BOTAO_HOVER = "#D96F65"
 COR_BRANCO = "#FFFFFF"
 
 
-
-
-
 class Aplication(Function):
     def __init__(self, window):
         self.window = window
@@ -37,6 +34,7 @@ class Aplication(Function):
 
     def label_img(self):
         imagem_pil = Image.open("/home/ayamzzzy/Documents/python/08_Interface grafica/imc/view/images/graficoCanva.png")
+# caso for rodar no windows coloque imagem_pil = Image.open("images/graficoCanva.png")
         self.imgTk=ImageTk.PhotoImage(imagem_pil)
         self.img=tk.Label(self.window,image=self.imgTk)
         self.img.configure(background=COR_FUNDO, bd=1, highlightbackground=COR_BORDA, highlightthickness=3)
@@ -105,13 +103,3 @@ class Aplication(Function):
             font=("Comic Sans", 20, "bold")
         )
         self.saida_label.place(relwidth=0.9, relheight=0.08, rely=0.85,relx=0.05)
-
-
-
-
-
-
-
-window = tk.Tk()
-
-Aplication(window)
