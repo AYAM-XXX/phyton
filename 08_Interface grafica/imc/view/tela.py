@@ -1,6 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import customtkinter as ctk
+from service.calcIMC import Function
 from tkinter import mainloop
 from tkinter.ttk import Treeview, Scrollbar, Style
 COR_FUNDO = "#FFF5F3"
@@ -11,41 +12,6 @@ COR_BORDA = "#E8A9A2"
 COR_BOTAO = "#E98F86"
 COR_BOTAO_HOVER = "#D96F65"
 COR_BRANCO = "#FFFFFF"
-
-
-class Function():
-
-    def calcular_imc(self):
-        try:
-            weight = float(self.weight_entry.get())
-            height = float(self.height_entry.get())
-
-            imc = weight / (height * height)
-
-            if imc == "":
-                self.saida_label.configure(text="Insira os dados")
-            if imc < 18.5:
-                texto_saida = f"Seu IMC é {imc:.2f}, você esta abaixo do peso"
-                self.saida_label.configure(text=texto_saida)
-
-            elif imc < 25:
-                texto_saida = f"Seu IMC é {imc:.2f}, você esta com peso normal"
-                self.saida_label.configure(text=texto_saida)
-            elif imc < 30:
-                texto_saida = f"Seu IMC é {imc:.2f}, você esta acima do peso"
-                self.saida_label.configure(text=texto_saida)
-            elif imc < 40:
-                texto_saida = f"Seu IMC é {imc:.2f}, você esta com obesidade"
-                self.saida_label.configure(text=texto_saida)
-
-            else:
-                texto_saida = f"Seu IMC é {imc:.2f}, você esta com obesidade morbida"
-                self.saida_label.configure(text=texto_saida)
-
-        except ValueError:
-
-            self.saida_label.configure(text="Insira os dados certos")
-
 
 
 
@@ -70,7 +36,7 @@ class Aplication(Function):
         self.window.minsize(750, 650)
 
     def label_img(self):
-        imagem_pil = Image.open("images/graficoCanva.png")
+        imagem_pil = Image.open("/home/ayamzzzy/Documents/python/08_Interface grafica/imc/view/images/graficoCanva.png")
         self.imgTk=ImageTk.PhotoImage(imagem_pil)
         self.img=tk.Label(self.window,image=self.imgTk)
         self.img.configure(background=COR_FUNDO, bd=1, highlightbackground=COR_BORDA, highlightthickness=3)
@@ -91,7 +57,8 @@ class Aplication(Function):
             border_width=3,
             corner_radius=8,
             border_color=COR_BORDA,
-            font=("Comic Sans", 15, "bold")
+            font=("Comic Sans", 15, "bold"),
+            text_color=COR_TEXTO
         )
         self.weight_entry.place(relwidth=0.25, relheight=0.07, rely=0.47, relx=0.5)
 
