@@ -1,4 +1,6 @@
 import tkinter as tk
+from pathlib import Path
+from PIL import Image
 from PIL import Image, ImageTk
 import customtkinter as ctk
 from service.calcIMC import Function
@@ -33,8 +35,8 @@ class Aplication(Function):
         self.window.minsize(750, 650)
 
     def label_img(self):
-        imagem_pil = Image.open("/home/ayamzzzy/Documents/python/08_Interface grafica/imc/view/images/graficoCanva.png")
-# caso for rodar no windows coloque imagem_pil = Image.open("images/graficoCanva.png")
+        CAMINHO = Path(__file__).resolve().parent / "images"
+        imagem_pil = Image.open(CAMINHO/"graficoCanva.png")
         self.imgTk=ImageTk.PhotoImage(imagem_pil)
         self.img=tk.Label(self.window,image=self.imgTk)
         self.img.configure(background=COR_FUNDO, bd=1, highlightbackground=COR_BORDA, highlightthickness=3)
